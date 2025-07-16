@@ -18,11 +18,18 @@ hisat2_extract_exons.py \
 > genome.exons
 
 
-
-####### Build index ########
+# Hisat2
 
 hisat2-build -p 24 \
 --ss $index/${ref_genome}.ss \
 --exon $index/${ref_genome}.exons \
 $genome/genome_${ref_genome}* \
 genome_index_${ref_genome}
+
+
+
+# Kallisto
+
+kallisto index \
+-i sinensis_V2.idx \ 
+reference_transcriptome.fasta
